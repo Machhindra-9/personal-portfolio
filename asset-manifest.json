@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Machhindra-9/personal-portfolio/static/css/main.4f3d1453.css",
+    "main.js": "/Machhindra-9/personal-portfolio/static/js/main.a6967853.js",
+    "static/js/453.71adf86d.chunk.js": "/Machhindra-9/personal-portfolio/static/js/453.71adf86d.chunk.js",
+    "static/media/bg-dark.jpg": "/Machhindra-9/personal-portfolio/static/media/bg-dark.7adf2ee27f8af8f105ed.jpg",
+    "static/media/mock08.png": "/Machhindra-9/personal-portfolio/static/media/mock08.13f46873fdbd382f4b76.png",
+    "static/media/bg-light.png": "/Machhindra-9/personal-portfolio/static/media/bg-light.bac0efb485244a522981.png",
+    "static/media/mock07.png": "/Machhindra-9/personal-portfolio/static/media/mock07.3f1110f482232b33c6a2.png",
+    "static/media/mock09.png": "/Machhindra-9/personal-portfolio/static/media/mock09.f9fc44a96b71a1c57232.png",
+    "static/media/mock10.png": "/Machhindra-9/personal-portfolio/static/media/mock10.1a77e26800d2cad3670c.png",
+    "static/media/professinal_image.jpg": "/Machhindra-9/personal-portfolio/static/media/professinal_image.b15571946225e33613b1.jpg",
+    "index.html": "/Machhindra-9/personal-portfolio/index.html",
+    "main.4f3d1453.css.map": "/Machhindra-9/personal-portfolio/static/css/main.4f3d1453.css.map",
+    "main.a6967853.js.map": "/Machhindra-9/personal-portfolio/static/js/main.a6967853.js.map",
+    "453.71adf86d.chunk.js.map": "/Machhindra-9/personal-portfolio/static/js/453.71adf86d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f3d1453.css",
+    "static/js/main.a6967853.js"
+  ]
+}

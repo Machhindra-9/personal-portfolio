@@ -1,0 +1,138 @@
+/* ===============================
+   CONTAINER
+================================ */
+.skills-container {
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  color: #cbd5e1;
+
+  // animation: fadeIn 0.8s ease-in-out;
+  animation: floatIn 2s ease forwards;
+
+}
+
+/* ===============================
+   GRID
+================================ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+/* ===============================
+   CARD
+================================ */
+.skill {
+  background: #111827;
+  padding: 25px;
+  border-radius: 14px;
+
+  box-shadow: 0 8px 20px rgba(64, 155, 137, 0.18);
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Stagger animation */
+.skill:nth-child(1) { animation-delay: 0.1s; }
+.skill:nth-child(2) { animation-delay: 0.25s; }
+.skill:nth-child(3) { animation-delay: 0.4s; }
+
+.skill:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(56, 189, 248, 0.22);
+}
+
+/* ===============================
+   ICONS
+================================ */
+.skill svg {
+  color: #38bdf8;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover svg {
+  transform: scale(1.08);
+}
+
+/* ===============================
+   HEADINGS
+================================ */
+.skill h3 {
+  color: #e5e7eb;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   TEXT
+================================ */
+.skill p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* ===============================
+   CHIPS
+================================ */
+.flex-chips {
+  margin-top: 15px;
+}
+
+.chip-title {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.chip {
+  background: #e5e7eb !important;
+  color: #1f2933 !important;
+  font-size: 0.8rem !important;
+  margin-right: 6px;
+  margin-top: 6px;
+  height: 26px !important;
+  border-radius: 6px !important;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 8% 6%;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,5 +1,5 @@
 /* ===============================
-   CONTAINER
+   MAIN CONTAINER
 ================================ */
 .container {
   width: 100%;
@@ -7,19 +7,18 @@
 }
 
 /* ===============================
-   MAIN SECTION
+   HERO SECTION
 ================================ */
 .about-section {
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
   background: url("../images/bg-dark.jpg") center / cover no-repeat;
-  gap: 20px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  animation: fadeIn 1.2s ease-in-out;
+  padding: 80px 20px;
 }
 
 /* ===============================
@@ -28,24 +27,18 @@
 .content-wrapper {
   display: flex;
   align-items: center;
-  gap: 150px;
-  margin-left: 200px;
+  justify-content: center;
+  gap: 80px;
 
   max-width: 1200px;
   width: 100%;
-
-  animation: slideRight 1s ease forwards;
 }
 
 /* ===============================
-   IMAGE (FLOAT IN)
+   PROFILE IMAGE
 ================================ */
 .image-wrapper {
-  position: relative;
-  margin-left: -70px;
-  z-index: 2;
-
-  animation: floatIn s ease forwards;
+  flex-shrink: 0;
 }
 
 .image-wrapper img {
@@ -60,8 +53,27 @@
 ================================ */
 .content {
   max-width: 520px;
-  text-align: left;
-  animation: fadeUp 1.4s ease forwards;
+}
+
+.hero-text {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.greeting {
+  font-size: 2.3rem;
+  color: #f5f7fa;
+}
+
+.name {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #00c2ff;
+}
+
+.role {
+  font-size: 1.4rem;
+  color: #b8d8f0;
 }
 
 /* ===============================
@@ -69,20 +81,19 @@
 ================================ */
 .social_icons {
   display: flex;
-  gap: 12px;
-  margin-bottom: 10px;
+  gap: 16px;
+  margin-top: 14px;
+}
 
-  svg {
-    font-size: 1.8rem;
-    color: #6ee7ff;
-    cursor: pointer;
-    transition: 0.3s;
+.social_icons svg {
+  font-size: 1.8rem;
+  color: #6ee7ff;
+  transition: 0.3s;
+}
 
-    &:hover {
-      color: #00c2ff;
-      transform: scale(1.15);
-    }
-  }
+.social_icons svg:hover {
+  color: #00c2ff;
+  transform: scale(1.15);
 }
 
 .mobile_social_icons {
@@ -90,96 +101,26 @@
 }
 
 /* ===============================
-   TEXT STYLING
-================================ */
-.hero-text {
-  margin: 0;
-  line-height: 1.1;
-  font-family: "Inter", "Segoe UI", sans-serif;
-}
-
-.greeting {
-  font-size: 2.5rem;
-  color: #f5f7fa;
-  animation: fadeUp 1.3s ease forwards;
-}
-
-.name {
-  font-size: 3.8rem;
-  font-weight: 700;
-  color: #00c2ff;
-  animation: fadeUp 1.5s ease forwards;
-}
-
-.role {
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  color: #b8d8f0;
-  animation: fadeUp 1.7s ease forwards;
-}
-
-/* ===============================
-   ANIMATIONS
-================================ */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideRight {
-  from {
-    transform: translateX(60px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(120px);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatIn {
-  from {
-    transform: translateX(-40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* ===============================
    MOBILE RESPONSIVE
 ================================ */
 @media (max-width: 768px) {
   .about-section {
-    justify-content: center;
+    padding: 100px 20px 60px;
   }
 
   .content-wrapper {
     flex-direction: column;
-    margin-left: 0;
-    transform: none;
-    padding: 120px 5% 60px;
+    gap: 30px;
+    text-align: center;
   }
 
-  .image-wrapper {
-    margin-left: 0;
+  .image-wrapper img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .name {
+    font-size: 2.4rem;
   }
 
   .social_icons {
@@ -188,16 +129,9 @@
 
   .mobile_social_icons {
     display: flex;
-    gap: 15px;
-    margin-top: 15px;
-
-    svg {
-      font-size: 1.8rem;
-      color: white;
-    }
-  }
-
-  .name {
-    font-size: 3.2rem;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 10px;
   }
 }
+ 

@@ -72,12 +72,12 @@ function Navigation({ parentToChild, modeChange }: any) {
       bottom: "-4px",
       width: "0%",
       height: "2px",
-      backgroundColor: "#3f96cb",
+      backgroundColor: "#d2e507ff",
       transition: "width 0.25s ease",
     },
 
     "&:hover": {
-      color: "#3f96cb",
+      color: "#d2e507ff",
     },
 
     "&:hover::after": {

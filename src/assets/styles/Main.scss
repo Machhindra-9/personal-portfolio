@@ -1,24 +1,41 @@
 /* ===============================
-   MAIN CONTAINER
+   GLOBAL FIX
 ================================ */
-.container {
-  width: 100%;
+body {
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* ===============================
-   HERO SECTION
+   HERO BACKGROUND
 ================================ */
-.about-section {
+.hero-wrapper {
   min-height: 100vh;
   width: 100%;
   background: url("../images/bg-dark.jpg") center / cover no-repeat;
-
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
-  padding: 80px 20px;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  width: 100%;
+  padding: 0 24px;
 }
 
 /* ===============================
@@ -27,20 +44,13 @@
 .content-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 80px;
-
-  max-width: 1200px;
-  width: 100%;
+  justify-content: space-between;
+  gap: 40px; /* reduced spacing */
 }
 
 /* ===============================
    PROFILE IMAGE
 ================================ */
-.image-wrapper {
-  flex-shrink: 0;
-}
-
 .image-wrapper img {
   width: 220px;
   height: 220px;
@@ -52,28 +62,34 @@
    TEXT CONTENT
 ================================ */
 .content {
+  display: flex;
+  flex-direction: column;
   max-width: 520px;
 }
 
-.hero-text {
-  margin: 0;
-  line-height: 1.2;
-}
-
+/* Greeting */
 .greeting {
-  font-size: 2.3rem;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
   color: #f5f7fa;
+  margin: 0 0 6px 0;
+  line-height: 1.1;
 }
 
+/* Name */
 .name {
-  font-size: 3.2rem;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
   font-weight: 700;
   color: #00c2ff;
+  margin: 0 0 8px 0;
+  line-height: 1.05;
 }
 
+/* Role */
 .role {
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
   color: #b8d8f0;
+  margin: 0;
+  line-height: 1.2;
 }
 
 /* ===============================
@@ -85,32 +101,73 @@
   margin-top: 14px;
 }
 
-.social_icons svg {
-  font-size: 1.8rem;
-  color: #6ee7ff;
-  transition: 0.3s;
+.social_icons a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: pulse 3.6s ease-in-out infinite;
 }
 
-.social_icons svg:hover {
-  color: #00c2ff;
+/* icon size */
+.social_icons svg,
+.social_icons img {
+  width: 26px;
+  height: 26px;
+}
+
+/* staggered animation */
+.social_icons a:nth-child(1) {
+  animation-delay: 0s;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.social_icons a:nth-child(2) {
+  animation-delay: 1.2s;
+  background: rgba(10, 102, 194, 0.25);
+}
+
+.social_icons a:nth-child(3) {
+  animation-delay: 2.4s;
+  background: rgba(0, 191, 255, 0.25);
+}
+
+.social_icons a:hover {
+  animation-play-state: paused;
   transform: scale(1.15);
 }
 
-.mobile_social_icons {
-  display: none;
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
 }
 
 /* ===============================
-   MOBILE RESPONSIVE
+   MOBILE VIEW
 ================================ */
 @media (max-width: 768px) {
-  .about-section {
-    padding: 100px 20px 60px;
-  }
-
   .content-wrapper {
     flex-direction: column;
-    gap: 30px;
     text-align: center;
   }
 
@@ -119,19 +176,7 @@
     height: 140px;
   }
 
-  .name {
-    font-size: 2.4rem;
-  }
-
-  .social_icons {
-    display: none;
-  }
-
-  .mobile_social_icons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 10px;
+  .content {
+    align-items: center;
   }
 }
- 

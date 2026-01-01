@@ -1,51 +1,47 @@
 import React from "react";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import '../assets/styles/Main.scss';
-import profileImg from "../assets/images/professinal_image.jpg";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import "../assets/styles/Main.scss";
 
-function Main() {
+import profileImage from "../assets/images/professional_image.jpg";
+import kodekloudLogo from "../assets/images/kodekloud.png";
 
+const Main = () => {
   return (
-  <div className="container">
-  <section className="about-section">
-    <div className="content-wrapper">
+    <div className="hero-wrapper">
+      <div className="hero-overlay" />
 
-      <div className="image-wrapper">
-        <img src={profileImg} alt="Machhindranath Kangane" />
-      </div>
+      <div className="container">
+        <div className="content-wrapper">
 
-      <div className="content">
-        <div className="social_icons">
-          <a href="https://github.com/Machhindra-9" target="_blank" rel="noreferrer">
-            <GitHubIcon />
-          </a>
-          <a href="https://www.linkedin.com/in/machhindranath-kangane-8ab629256" target="_blank" rel="noreferrer">
-            <LinkedInIcon />
-          </a>
+          <div className="image-wrapper">
+            <img src={profileImage} alt="Machhindranath" />
+          </div>
+
+          <div className="content">
+            <h1 className="hero-text greeting">Hi, I’m</h1>
+            <h2 className="hero-text name">Machhindranath</h2>
+            <p className="hero-text role">DevOps Engineer</p>
+
+            <div className="social_icons">
+              <a href="https://github.com/yourprofile" target="_blank" rel="noreferrer">
+                <GitHubIcon />
+              </a>
+
+              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">
+                <LinkedInIcon />
+              </a>
+
+              <a href="https://kodekloud.com" target="_blank" rel="noreferrer">
+                <img src={kodekloudLogo} alt="KodeKloud" />
+              </a>
+            </div>
+          </div>
+
         </div>
-
-        <h1 className="hero-text">
-          <span className="greeting">Hi, I’m</span><br />
-          <span className="name">Machhindranath</span><br />
-          <span className="role">DevOps Engineer</span>
-        </h1>
-
-        <div className="mobile_social_icons">
-          <a href="https://github.com/Machhindra-9" target="_blank" rel="noreferrer">
-            <GitHubIcon />
-          </a>
-          <a href="https://www.linkedin.com/in/machhindranath-kangane-8ab629256" target="_blank" rel="noreferrer">
-            <LinkedInIcon />
-          </a>
-        </div>
       </div>
-
     </div>
-  </section>
-</div>
-
   );
-}
+};
 
 export default Main;

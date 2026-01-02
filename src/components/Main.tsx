@@ -24,16 +24,12 @@ const Main = () => {
             <p className="hero-text role">DevOps Engineer</p>
 
             <div className="social_icons">
-              <a href="https://github.com/yourprofile" target="_blank" rel="noreferrer">
+              <a href="https://github.com/Machhindra-9" target="_blank" rel="noreferrer">
                 <GitHubIcon />
               </a>
 
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/machhindra9" target="_blank" rel="noreferrer">
                 <LinkedInIcon />
-              </a>
-
-              <a href="https://kodekloud.com" target="_blank" rel="noreferrer">
-                <img src={kodekloudLogo} alt="KodeKloud" />
               </a>
             </div>
           </div>

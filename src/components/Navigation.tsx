@@ -8,8 +8,8 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import List from "@mui/material/List";
-import ListIcon from "@mui/icons-material/List";
 import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
   { label: "Resume", link: "resume", external: true },
 ];
 
-const drawerWidth = 240;
+const NAVBAR_HEIGHT_MOBILE = 56;
 
 function Navigation({ parentToChild, modeChange }: any) {
   const { mode } = parentToChild;
@@ -39,7 +39,9 @@ function Navigation({ parentToChild, modeChange }: any) {
   useEffect(() => {
     const onScroll = () => {
       const nav = document.getElementById("navigation");
-      if (nav) setScrolled(window.scrollY > nav.clientHeight);
+      if (nav) {
+        setScrolled(window.scrollY > nav.clientHeight);
+      }
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -51,7 +53,6 @@ function Navigation({ parentToChild, modeChange }: any) {
     setMobileOpen(false);
   };
 
-  /* ✅ CLEAN, CONSISTENT NAV STYLE */
   const navItemStyle = {
     cursor: "pointer",
     color: "rgba(234, 240, 242, 1)",
@@ -89,11 +90,13 @@ function Navigation({ parentToChild, modeChange }: any) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
 
+      {/* ===== TOP NAVBAR (FULL WIDTH) ===== */}
       <AppBar
         id="navigation"
         className={`navbar-fixed-top${scrolled ? " scrolled" : ""}`}
       >
-        <Toolbar className="navigation-bar">
+        <Toolbar className="navigation-bar landing-navbar">
+          {/* MOBILE MENU ICON */}
           <IconButton
             color="inherit"
             edge="start"
@@ -103,13 +106,14 @@ function Navigation({ parentToChild, modeChange }: any) {
             <MenuIcon />
           </IconButton>
 
+          {/* THEME TOGGLE */}
           {mode === "dark" ? (
             <LightModeIcon onClick={modeChange} />
           ) : (
             <DarkModeIcon onClick={modeChange} />
           )}
 
-          {/* DESKTOP NAV */}
+          {/* DESKTOP NAV ITEMS */}
           <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}>
             {navItems.map(({ label, link, external }) =>
               external ? (
@@ -137,7 +141,7 @@ function Navigation({ parentToChild, modeChange }: any) {
         </Toolbar>
       </AppBar>
 
-      {/* MOBILE DRAWER */}
+      {/* ===== MOBILE SIDEBAR (75% WIDTH) ===== */}
       <Drawer
         variant="temporary"
         open={mobileOpen}
@@ -145,41 +149,50 @@ function Navigation({ parentToChild, modeChange }: any) {
         ModalProps={{ keepMounted: true }}
         sx={{
           display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": { width: drawerWidth },
+          "& .MuiDrawer-paper": {
+            width: "75vw",          // ✅ 75% of screen
+            maxWidth: 320,
+            backgroundColor: "#ffffff",
+          },
         }}
       >
-        <Box sx={{ textAlign: "center" }}>
-          <p className="mobile-menu-top">
-            <ListIcon /> Menu
-          </p>
+        <Box>
+          {/* DRAWER HEADER */}
+          <Box
+            sx={{
+              height: NAVBAR_HEIGHT_MOBILE,
+              px: 3,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              backgroundColor: "#080d74ff",
+              color: "#ffffff",
+            }}
+          >
+            <Box sx={{ fontSize: "1rem", fontWeight: 600 }}>
+              Machhindranath
+            </Box>
+            <Box sx={{ fontSize: "0.75rem", opacity: 0.7 }}>
+              DevOps Engineer
+            </Box>
+          </Box>
 
           <Divider />
 
+          {/* DRAWER NAV ITEMS */}
           <List>
             {navItems.map(({ label, link, external }) => (
               <ListItem key={label} disablePadding>
-                {external ? (
-                  <a
-                    href={resumeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      width: "100%",
-                      padding: "12px",
-                      textAlign: "center",
-                      textDecoration: "none",
-                      color: "inherit",
-                    }}
-                  >
-                    {label}
-                  </a>
-                ) : (
-                  <ListItemText
-                    primary={label}
-                    onClick={() => handleScroll(link)}
-                    sx={{ cursor: "pointer" }}
-                  />
-                )}
+                <ListItemButton
+                  component={external ? "a" : "button"}
+                  href={external ? resumeUrl : undefined}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  onClick={!external ? () => handleScroll(link) : undefined}
+                  sx={{ pl: 3, py: 1.6 }}
+                >
+                  <ListItemText primary={label} />
+                </ListItemButton>
               </ListItem>
             ))}
           </List>

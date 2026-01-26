@@ -14,9 +14,10 @@ function Project() {
                 <p>Automated CI/CD using Docker, Kubernetes, and Jenkins with security scanning (Trivy, SonarQube, OWASP) and monitoring via Prometheus and Grafana.</p>
             </div>
             <div className="project">
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><h2>Vehicle Insurance Fraud Claim Detection using Machine Learning</h2></a>
-                <p>A high-performance fraud detection system using Machine Learning to analyze insurance claims, improve prediction accuracy, and reduce false positives through intelligent feature evaluation.</p>
+                <a href="https://github.com/Machhindra-9/personal-portfolio" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://github.com/Machhindra-9/personal-portfolio" target="_blank" rel="noreferrer"><h2>LevelUP – Cloud-Native Learning Platform (Microservices & CI/CD)</h2></a>
+                <p>LevelUP is a cloud-native learning management platform designed using a microservices architecture and modern DevOps practices.
+The platform supports role-based users (students & instructors), course creation and enrollment, media handling, and secure authentication, all built to be scalable, maintainable, and deployment-ready.</p>
             </div>
             </div>
     </div>

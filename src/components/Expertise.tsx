@@ -7,7 +7,7 @@ import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
-    "Linux Admin",
+     "Linux Admin",
     "User & Access",
     "Networking",
     "Shell Scripting",

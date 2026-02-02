@@ -11,13 +11,12 @@ function Project() {
             <div className="project">
                 <a href="https://github.com/Machhindra-9/cdac-project.git" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/Machhindra-9/cdac-project.git" target="_blank" rel="noreferrer"><h2> DevSecOps Automation for Secure Kubernetes Deployment</h2></a>
-                <p>Automated CI/CD using Docker, Kubernetes, and Jenkins with security scanning (Trivy, SonarQube, OWASP) and monitoring via Prometheus and Grafana.</p>
+                <p>Automated CI/CD pipelines built with Docker, Kubernetes, and Jenkins, integrated with security scanning (Trivy, SonarQube, OWASP) and monitoring using Prometheus and Grafana.</p>
             </div>
             <div className="project">
                 <a href="https://github.com/Machhindra-9/personal-portfolio" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/Machhindra-9/personal-portfolio" target="_blank" rel="noreferrer"><h2>LevelUP – Cloud-Native Learning Platform (Microservices & CI/CD)</h2></a>
-                <p>LevelUP is a cloud-native learning management platform designed using a microservices architecture and modern DevOps practices.
-The platform supports role-based users (students & instructors), course creation and enrollment, media handling, and secure authentication, all built to be scalable, maintainable, and deployment-ready.</p>
+                <p>LevelUP is a cloud-native LMS built on a microservices architecture, offering role-based access, course management, and secure JWT authentication, designed for scalable and production-ready deployments.</p>
             </div>
             </div>
     </div>

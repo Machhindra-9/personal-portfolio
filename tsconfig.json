@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es5no",
     "lib": ["dom", "dom.iterable", "esnext"],
 
     "module": "node16",

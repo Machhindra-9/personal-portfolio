@@ -7,30 +7,20 @@ import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
-     "Linux Admin",
-    "User & Access",
-    "Networking",
-    "Shell Scripting",
-    "Storage",  
-    "System Monitoring",
-    "Security & Hardening",
-    "Linux Distros"
+     "Core Administration", "User & Access Control", "Networking & Troubleshooting", "Shell Scripting & Automation", "System Monitoring", "Security & Hardening", "Storage & File Systems", "Process & Services"
+
+    
 
 ];
 
 const labelsSecond = [
-    "Linux",
-    "Docker",
-    "AWS",
-    "GitHub",
-    "CI/CD",
-    "Git",
-    "Kubernetes",
-    "Jenkins",
-    "GitHub Actions",
-    "Terraform",
-    "Ansible",
-    "Monitoring"
+    "Secure CI/CD & Pipelines",
+"Containerization (Docker)",
+"Orchestration (Kubernetes, Helm)",
+"Iac (Terraform, Ansible)",
+"Cloud Platforms (AWS)",
+"Version Control (Git, GitHub)",
+"CI (GitHub Actions, Jenkins)"
 ];
 
 const labelsThird = [
@@ -50,7 +40,7 @@ function Expertise() {
                 <div className="skill">
                     <FontAwesomeIcon icon={faLinux} size="3x"/>
                     <h3>Linux Administration</h3>
-                    <p>I have hands-on experience in Linux system administration, managing users, permissions, services, and networking. I am skilled in maintaining stable, secure, and optimized Linux environments for real-world workloads.</p>
+                    <p>Hands-on experience managing Linux servers, including user access control, service management, networking, and storage. Experienced in troubleshooting system issues, automating tasks with Bash scripting, and implementing security best practices to maintain stable and production-ready environments.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Linux Stack:</span>
                         {labelsFirst.map((label, index) => (
@@ -61,8 +51,8 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
+                    <h3>DevOps & Cloud</h3>
+                    <p>Experienced in building and managing CI/CD pipelines, containerized deployments, and infrastructure automation. Skilled in integrating development and operations workflows using tools like Docker, Kubernetes, and Terraform to enable reliable, scalable, and production-ready deployments.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsSecond.map((label, index) => (
@@ -74,7 +64,7 @@ function Expertise() {
                 <div className="skill">
                     <FontAwesomeIcon icon={faChartLine} size="3x"/>
                     <h3>Monitoring & Observability</h3>
-                    <p>Monitoring & Observability ensures system health and reliability by tracking metrics, logs, and alerts to detect issues early and maintain stable, high-performing infrastructure.</p>
+                    <p>Experienced in implementing monitoring and observability solutions to ensure system reliability and performance. Skilled in collecting and analyzing metrics, logs, and alerts using tools like Prometheus, Grafana, and ELK Stack to proactively detect issues and optimize system health.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (

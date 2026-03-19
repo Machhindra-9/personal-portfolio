@@ -1,0 +1,107 @@
+name: Build & Push Auth Service Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-auth-service:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        run: |
+          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Build Docker image for Auth Service
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/auth-service:latest -f Auth_Service/Dockerfile Auth_Service
+
+      - name: Push image to DockerHub
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/auth-service:latest
+
+  build-course-service:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Build Course Service Image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME}}/course-service:latest -f Course_Service/Dockerfile Course_Service
+
+      - name: push image to DockerHub
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME}}/course-service:latest
+
+  build-user-service:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Source code
+        uses: actions/checkout@v4
+      
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Build User Service Image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest -f User_Service/Dockerfile User_Service
+
+      - name: Push image to DockerHub
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME}}/user-service:latest
+  
+  build-media-service:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source code
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME}}" --password-stdin
+
+      - name: Build Media Service Image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME}}/media-service:latest -f Media_Services/Dockerfile Media_Services
+
+      - name: Push image to DockerHub
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME}}/media-service:latest 
+  
+  build-mysql-service:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source code
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME}}" --password-stdin
+
+      - name: Build Mysql Service Image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME}}/mysql-service:latest -f Mysql_Service/Dockerfile Mysql_Service
+
+      - name: Push image to DockerHub
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME}}/mysql-service:latest 
+   
+  build-frontend-service:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source code
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME}}" --password-stdin
+
+      - name: Build frontend Service Image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME}}/frontend-service:latest -f frontend/Dockerfile frontend
+
+      - name: Push image to DockerHub
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME}}/frontend-service:latest  
+
+
+
+

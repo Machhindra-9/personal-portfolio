@@ -40,13 +40,17 @@ function Expertise() {
                 <div className="skill">
                     <FontAwesomeIcon icon={faLinux} size="3x"/>
                     <h3>Linux Administration</h3>
-                    <p>Hands-on experience managing Linux servers, including user access control, service management, networking, and storage. Experienced in troubleshooting system issues, automating tasks with Bash scripting, and implementing security best practices to maintain stable and production-ready environments.</p>
+                    <p>Hands-on experience managing Linux servers, including user access control, service management, networking, and storage. Experienced in troubleshooting system issues, automating tasks with Bash scripting, and implementing security best practices to maintain stable and production-ready.</p>
                     <div className="flex-chips">
-                        <span className="chip-title">Linux Stack:</span>
-                        {labelsFirst.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
+                    <span className="chip-title">Tech stack:</span>
+                    <div className="chips-wrapper">
+                     {labelsFirst.map((label, index) => (
+                    <Chip key={index} className='chip' label={label} />
+                    ))}
                     </div>
+</div>
+                    
+                    
                 </div>
 
                 <div className="skill">
@@ -54,24 +58,34 @@ function Expertise() {
                     <h3>DevOps & Cloud</h3>
                     <p>Experienced in building and managing CI/CD pipelines, containerized deployments, and infrastructure automation. Skilled in integrating development and operations workflows using tools like Docker, Kubernetes, and Terraform to enable reliable, scalable, and production-ready deployments.</p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
+                     <span className="chip-title">Tech stack:</span>
+                        <div className="chips-wrapper">
                         {labelsSecond.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
+                        <Chip key={index} className='chip' label={label} />
                         ))}
                     </div>
+                </div>
                 </div>
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faChartLine} size="3x"/>
                     <h3>Monitoring & Observability</h3>
-                    <p>Experienced in implementing monitoring and observability solutions to ensure system reliability and performance. Skilled in collecting and analyzing metrics, logs, and alerts using tools like Prometheus, Grafana, and ELK Stack to proactively detect issues and optimize system health.</p>
-                    <div className="flex-chips">
+                    <p>Experienced in building monitoring and observability solutions that improve system reliability and performance. Skilled in gathering and analyzing metrics, logs, and alerts using tools like Prometheus, Grafana, and ELK Stack to identify issues and optimize system.</p>
+                    {/* <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
-                    </div>
-                </div>
+                    </div> */}
+
+                    <div className="flex-chips">
+                        <span className="chip-title">Tech stack:</span>
+                        <div className="chips-wrapper">
+                            {labelsThird.map((label, index) => (
+                                <Chip key={index} className='chip' label={label} />
+                            ))}
+                        </div>
+</div>                </div>
             </div>
         </div>
     </div>
